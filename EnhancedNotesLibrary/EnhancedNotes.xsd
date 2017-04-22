@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="EnhancedNotes" type="EnhancedNotes"/>
+  <xs:element name="EnhancedNotesList" type ="EnhancedNotesList" />
+  <xs:complexType name="EnhancedNotesList">
+    <xs:sequence>
+      <xs:element name="Profiles" type="Profiles" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Profiles">
+    <xs:sequence>
+      <xs:element name="Profile" type="Profile" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Profile">
+    <xs:sequence>
+      <xs:element name="EnhancedNotes" type="EnhancedNotes" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="Id" type="xs:string" use="required" />
+    <xs:attribute name="Title" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="EnhancedNotes">
+    <xs:sequence>
+      <xs:element name="Note1" type="Text" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Note2" type="Text" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Note3" type="Text" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Note4" type="Text" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Note5" type="Text" minOccurs="0" maxOccurs="1" />
+      <xs:element name="InvelosData" type="InvelosData"  minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Text">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="DisplayName" type="xs:string" use="optional"/>
+        <xs:attribute name="Base64DisplayName" type="xs:string" use="optional"/>
+        <xs:attribute name="IsHtml" type="xs:boolean" use="required"/>
+        <xs:attribute name="Base64Note" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="InvelosData">
+    <xs:sequence>
+      <xs:element name="Notes" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
