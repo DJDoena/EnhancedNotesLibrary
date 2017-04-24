@@ -21,6 +21,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedNotes
                 {
                     s_XmlSerializer = new XmlSerializer(typeof(EnhancedNotesList));
                 }
+
                 return (s_XmlSerializer);
             }
         }
@@ -29,20 +30,21 @@ namespace DoenaSoft.DVDProfiler.EnhancedNotes
         {
             using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                EnhancedNotesList instance;
+                EnhancedNotesList instance = (EnhancedNotesList)(XmlSerializer.Deserialize(fs));
 
-                instance = (EnhancedNotesList)(XmlSerializer.Deserialize(fs));
                 return (instance);
             }
         }
 
-        public static void Serialize(EnhancedNotesList instance, String fileName)
+        public static void Serialize(EnhancedNotesList instance
+            , String fileName)
         {
             using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
             {
                 using (XmlTextWriter xtw = new XmlTextWriter(fs, Encoding.UTF8))
                 {
                     xtw.Formatting = Formatting.Indented;
+
                     XmlSerializer.Serialize(xtw, instance);
                 }
             }
@@ -67,6 +69,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedNotes
                 {
                     s_XmlSerializer = new XmlSerializer(typeof(EnhancedNotes));
                 }
+
                 return (s_XmlSerializer);
             }
         }
@@ -75,20 +78,21 @@ namespace DoenaSoft.DVDProfiler.EnhancedNotes
         {
             using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                EnhancedNotes instance;
+                EnhancedNotes instance = (EnhancedNotes)(XmlSerializer.Deserialize(fs));
 
-                instance = (EnhancedNotes)(XmlSerializer.Deserialize(fs));
                 return (instance);
             }
         }
 
-        public static void Serialize(EnhancedNotes instance, String fileName)
+        public static void Serialize(EnhancedNotes instance
+            , String fileName)
         {
             using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
             {
-                using(XmlTextWriter xtw = new XmlTextWriter(fs, Encoding.UTF8))
+                using (XmlTextWriter xtw = new XmlTextWriter(fs, Encoding.UTF8))
                 {
                     xtw.Formatting = Formatting.Indented;
+
                     XmlSerializer.Serialize(xtw, instance);
                 }
             }
