@@ -1,47 +1,45 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-// xsd.exe /c /l:cs EnhancedNotes.xsd /n:DoenaSoft.DVDProfiler.EnhancedNotes
+// xsd.exe /c /l:cs /f /n:DoenaSoft.DVDProfiler.EnhancedNotes EnhancedNotes.xsd
 
 namespace DoenaSoft.DVDProfiler.EnhancedNotes
 {
     public sealed partial class EnhancedNotesList
     {
-        private static XmlSerializer s_XmlSerializer;
+        private static XmlSerializer _xmlSerializer;
 
         [XmlIgnore]
         public static XmlSerializer XmlSerializer
         {
             get
             {
-                if (s_XmlSerializer == null)
+                if (_xmlSerializer == null)
                 {
-                    s_XmlSerializer = new XmlSerializer(typeof(EnhancedNotesList));
+                    _xmlSerializer = new XmlSerializer(typeof(EnhancedNotesList));
                 }
 
-                return (s_XmlSerializer);
+                return _xmlSerializer;
             }
         }
 
-        public static EnhancedNotesList Deserialize(String fileName)
+        public static EnhancedNotesList Deserialize(string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (var fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                EnhancedNotesList instance = (EnhancedNotesList)(XmlSerializer.Deserialize(fs));
+                var instance = (EnhancedNotesList)(XmlSerializer.Deserialize(fs));
 
-                return (instance);
+                return instance;
             }
         }
 
-        public static void Serialize(EnhancedNotesList instance
-            , String fileName)
+        public static void Serialize(EnhancedNotesList instance, string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
+            using (var fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
             {
-                using (XmlTextWriter xtw = new XmlTextWriter(fs, Encoding.UTF8))
+                using (var xtw = new XmlTextWriter(fs, Encoding.UTF8))
                 {
                     xtw.Formatting = Formatting.Indented;
 
@@ -50,7 +48,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedNotes
             }
         }
 
-        public void Serialize(String fileName)
+        public void Serialize(string fileName)
         {
             Serialize(this, fileName);
         }
@@ -58,38 +56,37 @@ namespace DoenaSoft.DVDProfiler.EnhancedNotes
 
     public sealed partial class EnhancedNotes
     {
-        private static XmlSerializer s_XmlSerializer;
+        private static XmlSerializer _xmlSerializer;
 
         [XmlIgnore]
         public static XmlSerializer XmlSerializer
         {
             get
             {
-                if (s_XmlSerializer == null)
+                if (_xmlSerializer == null)
                 {
-                    s_XmlSerializer = new XmlSerializer(typeof(EnhancedNotes));
+                    _xmlSerializer = new XmlSerializer(typeof(EnhancedNotes));
                 }
 
-                return (s_XmlSerializer);
+                return _xmlSerializer;
             }
         }
 
-        public static EnhancedNotes Deserialize(String fileName)
+        public static EnhancedNotes Deserialize(string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (var fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                EnhancedNotes instance = (EnhancedNotes)(XmlSerializer.Deserialize(fs));
+                var instance = (EnhancedNotes)(XmlSerializer.Deserialize(fs));
 
-                return (instance);
+                return instance;
             }
         }
 
-        public static void Serialize(EnhancedNotes instance
-            , String fileName)
+        public static void Serialize(EnhancedNotes instance, string fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
+            using (var fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
             {
-                using (XmlTextWriter xtw = new XmlTextWriter(fs, Encoding.UTF8))
+                using (var xtw = new XmlTextWriter(fs, Encoding.UTF8))
                 {
                     xtw.Formatting = Formatting.Indented;
 
@@ -98,7 +95,7 @@ namespace DoenaSoft.DVDProfiler.EnhancedNotes
             }
         }
 
-        public void Serialize(String fileName)
+        public void Serialize(string fileName)
         {
             Serialize(this, fileName);
         }
