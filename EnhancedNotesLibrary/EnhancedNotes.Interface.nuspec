@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>DoenaSoft.EnhancedNotes.Interface</id>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <title>DoenaSoft.EnhancedNotes.Interface</title>
     <authors>DJ Doena</authors>
     <icon>images\djdsoft.png</icon>
@@ -22,7 +22,7 @@
     <file src="bin\x86\Release\DoenaSoft.EnhancedNotes.Interface.xml" target="build\x86\DoenaSoft.EnhancedNotes.Interface.xml" />
     <file src="bin\x86\Release\EnhancedNotes.xsd" target="build\x86\EnhancedNotes.xsd" />
 
-    <file src="EnhancedNotes.Interface.props" target="build\net452" />
+    <file src="DoenaSoft.EnhancedNotes.Interface.props" target="build\net452" />
 
     <file src="djdsoft.png" target="images\" />
 </files>
