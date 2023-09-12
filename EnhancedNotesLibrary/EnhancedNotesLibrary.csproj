@@ -1,104 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F3CBE6F-7CDE-4A89-9685-09B65394D171}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DoenaSoft.DVDProfiler.EnhancedNotes</RootNamespace>
-    <AssemblyName>DoenaSoft.EnhancedNotes.Interface</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\x86\Debug\DoenaSoft.EnhancedNotes.Interface.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>EnhancedNotesLibrary.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\x64\Debug\DoenaSoft.EnhancedNotes.Interface.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>false</Prefer32Bit>
-    <NoWarn>1591</NoWarn>
-    <DocumentationFile>bin\x86\Release\DoenaSoft.EnhancedNotes.Interface.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-    <NoWarn>1591</NoWarn>
-    <DocumentationFile>bin\x64\Release\DoenaSoft.EnhancedNotes.Interface.xml</DocumentationFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.XML" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="EnhancedNotes.xsd">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ClassGuid.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EnhancedNotes.cs">
-      <DependentUpon>EnhancedNotes.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="EnhancedNotes.NotGenerated.cs">
-      <DependentUpon>EnhancedNotes.xsd</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="EnhancedNotes.Interface.nuspec" />
-    <None Include="DoenaSoft.EnhancedNotes.Interface.props" />
-    <None Include="EnhancedNotesLibrary.snk" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="djdsoft.png" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0</TargetFrameworks>
+		<Platforms>AnyCPU</Platforms>
+		<OutputType>Library</OutputType>
+		<RootNamespace>DoenaSoft.DVDProfiler.EnhancedNotes</RootNamespace>
+		<AssemblyName>DoenaSoft.EnhancedNotes.Interface</AssemblyName>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>EnhancedNotesLibrary.snk</AssemblyOriginatorKeyFile>
+		<Title>DoenaSoft.EnhancedNotesLibrary</Title>
+		<Company>Doena Soft.</Company>
+		<Authors>DJ Doena</Authors>
+		<Description>Gives an interface layer for the COM plugin EnhancedNotes for DVD Profiler</Description>
+		<Copyright>Copyright © Doena Soft. 2017 - 2023</Copyright>
+		<PackageProjectUrl>https://github.com/DJDoena/MediaInfoHelper</PackageProjectUrl>
+		<PackageIcon>djdsoft.png</PackageIcon>
+		<RepositoryUrl>https://github.com/DJDoena/MediaInfoHelper</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>dvd-profiler, dvdprofiler, invelos, EnhancedNotes</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Version>2.0.0</Version>
+		<FileVersion>2.0.0</FileVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<NoWarn>1701;1702;1591</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Update="EnhancedNotes.NotGenerated.cs">
+			<DependentUpon>EnhancedNotes.xsd</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="djdsoft.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
 </Project>
