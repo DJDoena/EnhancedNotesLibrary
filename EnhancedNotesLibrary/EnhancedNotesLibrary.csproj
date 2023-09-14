@@ -20,8 +20,8 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>dvd-profiler, dvdprofiler, invelos, EnhancedNotes</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Version>2.0.1</Version>
-		<FileVersion>2.0.1</FileVersion>
+		<Version>2.0.2</Version>
+		<FileVersion>2.0.2</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -29,9 +29,21 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Remove="EnhancedNotes.xsd" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="EnhancedNotes.xsd" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Compile Update="EnhancedNotes.NotGenerated.cs">
 			<DependentUpon>EnhancedNotes.xsd</DependentUpon>
 		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="EnhancedNotes.xsd" />
 	</ItemGroup>
 
 	<ItemGroup>
