@@ -1,31 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		<AssemblyName>DoenaSoft.EnhancedNotes.Interface</AssemblyName>
+		<RootNamespace>DoenaSoft.DVDProfiler.EnhancedNotes</RootNamespace>
+		<OutputType>Library</OutputType>
 		<TargetFrameworks>netstandard2.0</TargetFrameworks>
 		<Platforms>AnyCPU</Platforms>
-		<OutputType>Library</OutputType>
-		<RootNamespace>DoenaSoft.DVDProfiler.EnhancedNotes</RootNamespace>
-		<AssemblyName>DoenaSoft.EnhancedNotes.Interface</AssemblyName>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<NoWarn>1701;1702;1591</NoWarn>
 		<SignAssembly>True</SignAssembly>
 		<AssemblyOriginatorKeyFile>EnhancedNotesLibrary.snk</AssemblyOriginatorKeyFile>
 		<Title>DoenaSoft.EnhancedNotesLibrary</Title>
-		<Company>Doena Soft.</Company>
-		<Authors>DJ Doena</Authors>
-		<Description>Gives an interface layer for the COM plugin EnhancedNotes for DVD Profiler</Description>
-		<Copyright>Copyright © Doena Soft. 2017 - 2023</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/DJDoena/EnhancedNotesLibrary</PackageProjectUrl>
-		<PackageIcon>djdsoft.png</PackageIcon>
 		<RepositoryUrl>https://github.com/DJDoena/EnhancedNotesLibrary</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>dvd-profiler, dvdprofiler, invelos, EnhancedNotes</PackageTags>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>djdsoft.png</PackageIcon>
+		<Description>Gives an interface layer for the COM plugin EnhancedNotes for DVD Profiler</Description>
+		<Company>Doena Soft.</Company>
+		<Authors>DJ Doena</Authors>
+		<Copyright>Copyright © Doena Soft. 2017 - 2023</Copyright>
 		<Version>2.0.2</Version>
 		<FileVersion>2.0.2</FileVersion>
-	</PropertyGroup>
-
-	<PropertyGroup>
-		<NoWarn>1701;1702;1591</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
